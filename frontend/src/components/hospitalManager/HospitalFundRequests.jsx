@@ -1,0 +1,115 @@
+import React, { useState, useEffect } from 'react';
+import api from '../../utils/api';
+import { useAuth } from '../../context/AuthContext';
+import HospitalRequestTable from './HospitalRequestTable';
+import CreateRequestModal from './CreateRequestModal';
+
+const HospitalFundRequests = () => {
+  const { user } = useAuth();
+  const [requests, setRequests] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingRequest, setEditingRequest] = useState(null);
+  const [hospitalId, setHospitalId] = useState(null);
+  const [error, setError] = useState(null);
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const hospitalRes = await api.get(`/hospitals/user/${user.id}`);
+      const hData = hospitalRes.data;
+      const hId = hData._id || hData.id;
+      setHospitalId(hId);
+
+      if (!hId) {
+        setError("No hospital profile found for your account.");
+        setRequests([]);
+        return;
+      }
+
+      const res = await api.get(`/hospital-requests/fund/hospital/${hId}`);
+      setRequests(res.data);
+    } catch (error) {
+      console.error("Error fetching fund requests:", error);
+      if (error.response?.status === 404) {
+        setError("Your account is not linked to any registered hospital.");
+      } else {
+        setError("Failed to synchronize with the coordination server.");
+      }
+      setRequests([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (user?.id) fetchData();
+  }, [user]);
+
+  const handleDelete = async (requestId) => {
+    if (!window.confirm("Are you sure you want to withdraw this financial aid request?")) return;
+    try {
+      await api.delete(`/hospital-requests/fund/${requestId}`);
+      fetchData();
+    } catch (err) {
+      alert(err.response?.data?.message || "Failed to withdraw fund request");
+    }
+  };
+
+  return (
+    <div className="p-10 space-y-10 max-w-[1700px] mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 font-['Work_Sans']">
+      <section className="flex justify-between items-end">
+        <div>
+          <h1 className="text-5xl font-extrabold tracking-tight text-slate-900">Fund Requests</h1>
+          <p className="text-slate-500 mt-3 font-medium text-lg">Propose grant requirements for critical infrastructure and operations.</p>
+        </div>
+        <button
+          disabled={!hospitalId}
+          onClick={() => {
+            setEditingRequest(null);
+            setIsModalOpen(true);
+          }}
+          className="px-8 py-4 bg-green-600 text-white font-bold rounded-2xl shadow-xl shadow-green-600/20 hover:scale-[1.05] active:scale-95 transition-all flex items-center gap-3 disabled:opacity-50 disabled:hover:scale-100"
+        >
+          <span className="material-symbols-outlined font-bold">add_circle</span>
+          Request Funds
+        </button>
+      </section>
+
+      {error && (
+        <div className="p-6 bg-red-50 border border-red-100 rounded-[24px] flex items-center gap-4 text-red-700">
+          <span className="material-symbols-outlined text-red-500">error</span>
+          <div className="font-bold">{error}</div>
+        </div>
+      )}
+
+      <HospitalRequestTable
+        requests={requests}
+        loading={loading}
+        title="Capital Coordination"
+        icon="payments"
+        onDelete={handleDelete}
+        onEdit={(req) => {
+          console.log("[HospitalFundRequests Debug] Editing request:", req);
+          setEditingRequest(req);
+          setIsModalOpen(true);
+        }}
+      />
+
+      <CreateRequestModal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          setEditingRequest(null);
+        }}
+        onSuccess={fetchData}
+        type="FUND"
+        hospitalId={hospitalId}
+        editRequest={editingRequest}
+      />
+    </div>
+  );
+};
+
+export default HospitalFundRequests;

@@ -1,0 +1,126 @@
+.healio-methods {
+    background-color: var(--color-bg-light);
+}
+
+.methods-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* Visuals */
+.img-glass-wrapper {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+}
+
+.methods-img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+    aspect-ratio: 4/5;
+}
+
+.glass-overlay-box {
+    position: absolute;
+    bottom: -2rem;
+    left: -2rem;
+    padding: 2rem;
+    border-radius: var(--border-radius-md);
+    max-width: 250px;
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-number {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-text {
+    color: var(--color-bg-white);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    opacity: 0.9;
+    display: block;
+}
+
+/* Content */
+.methods-description {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.method-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.method-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: var(--color-bg-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.method-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(241, 54, 157, 0.2);
+}
+
+.method-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(241, 54, 157, 0.1);
+    color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.method-text h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.method-text p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .methods-wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .glass-overlay-box {
+        left: 2rem;
+        bottom: -2rem;
+    }
+}

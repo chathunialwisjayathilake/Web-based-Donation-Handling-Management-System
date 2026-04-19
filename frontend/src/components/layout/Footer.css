@@ -1,0 +1,123 @@
+.healio-footer {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    padding: 5rem 0 2rem 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+/* Brand Section */
+.footer-logo {
+    margin-bottom: 1.5rem;
+    display: flex;
+}
+
+.footer-logo .logo-text {
+    color: var(--color-bg-white);
+}
+
+.footer-brand-text {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+/* Common Titles */
+.footer-title {
+    color: var(--color-bg-white);
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Links List */
+.footer-nav-list,
+.footer-contact-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-nav-list a {
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+}
+
+.footer-nav-list a:hover {
+    color: var(--color-primary);
+    padding-left: 5px;
+}
+
+/* Contact List */
+.footer-contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.footer-contact-list li i {
+    color: var(--color-primary);
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Social */
+.footer-social-text {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    transition: all var(--transition-fast);
+}
+
+.social-icon:hover {
+    background: var(--gradient-primary);
+    color: var(--color-bg-white);
+    transform: translateY(-3px);
+}
+
+/* Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
