@@ -1,9 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
 const BloodSidebar = ({ activeTab, setActiveTab }) => {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/', { replace: true });
+  };
 
   const menuItems = [
     { id: 'dashboard', title: 'Dashboard', icon: 'dashboard' },
@@ -74,10 +81,11 @@ const BloodSidebar = ({ activeTab, setActiveTab }) => {
         <div className="space-y-1">
           <button className="w-full flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all text-sm font-semibold text-left">
             <span className="material-symbols-outlined text-lg">settings</span>
+            
             Settings
           </button>
           <button
-            onClick={logout}
+            onClick={handleLogout}
             className="w-full flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-red-500 hover:bg-red-500/5 rounded-xl transition-all text-sm font-semibold text-left"
           >
             <span className="material-symbols-outlined text-lg">logout</span>
