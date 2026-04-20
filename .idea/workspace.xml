@@ -4,32 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6e23ce0-842a-455e-bbc0-055e928f0851" name="Changes" comment="" />
+    <list default="true" id="668a01e3-0ead-49ba-a04c-2060f370f216" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Web-based-Donation-Handling-Management-System" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Uinduwara"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;chathunialwisjayathilake&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/chathunialwisjayathilake/Web-based-Donation-Handling-Management-System.git",
-    "accountId": "594898c8-2657-4087-9a4f-ad105dc3015c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/chathunialwisjayathilake/Web-based-Donation-Handling-Management-System.git&quot;,
+    &quot;accountId&quot;: &quot;594898c8-2657-4087-9a4f-ad105dc3015c&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
-  <component name="ProjectId" id="3CZl5PdddFImMPnfbDSJupwtDje" />
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="3CaZdGAtT5fnqxCCQdPol86ZqZ0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,11 +39,11 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "IT24103050",
-    "ignore.virus.scanning.warn.message": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "IT24101023",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/umesh/OneDrive/Desktop/donation-system 2",
+    "last_opened_file_path": "C:/Users/umesh/OneDrive/Desktop/Web-based-Donation-Handling-Management-System",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,12 +63,15 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e6e23ce0-842a-455e-bbc0-055e928f0851" name="Changes" comment="" />
-      <created>1776600790639</created>
+      <changelist id="668a01e3-0ead-49ba-a04c-2060f370f216" name="Changes" comment="" />
+      <created>1776625726463</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1776600790639</updated>
-      <workItem from="1776600792980" duration="4012000" />
+      <updated>1776625726463</updated>
+      <workItem from="1776625727595" duration="209000" />
+      <workItem from="1776625950633" duration="517000" />
+      <workItem from="1776626738762" duration="510000" />
+      <workItem from="1776682055097" duration="1467000" />
     </task>
     <servers />
   </component>
