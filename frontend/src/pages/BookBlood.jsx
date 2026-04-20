@@ -331,7 +331,7 @@ const BookBlood = () => {
                                     ) : (
                                         <>
                                             <i className="fa-solid fa-calendar-check text-lg"></i>
-                                            <span>Confirm Booking</span>
+                                            <span>Confirz Booking</span>
                                         </>
                                     )}
                                 </button>
